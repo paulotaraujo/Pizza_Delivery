@@ -1,8 +1,6 @@
 from pydantic import BaseModel
 from typing import Optional
 
-
-
 class UsuarioSchema(BaseModel):
     nome: str
     email: str
@@ -12,3 +10,17 @@ class UsuarioSchema(BaseModel):
 
     class Config:
         from_attibutes = True
+
+
+class PedidoSchema(BaseModel):
+    usuario: int
+
+    class Config:
+        from_attributes = True
+
+class LoginSchema(BaseModel):
+    email: str
+    senha: str
+
+    class Config:
+        from_attributes = True
